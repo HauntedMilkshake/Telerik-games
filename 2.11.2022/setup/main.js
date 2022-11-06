@@ -5,42 +5,34 @@ const Game = new Phaser.Game(800, 800, Phaser.AUTO, '', { preload, create, updat
 //preload e kato loadMedia v sdl
 function preload() {
 Game.load.image("diuner", "images/pileshki_duner_grand.png")
-//tova diuner e kliuch i moje kakvo da e kakvoto si iskame
+//tova diuner e kliuch i moje da e kakvoto si iskame
 }
-var diuner;
+// ne znam dali chetete komentari 
+// no ako chetete 
+/*
+░▄▀▄▀▀▀▀▄▀▄░░░░░░░░░
+░█░░░░░░░░▀▄░░░░░░▄░
+█░░▀░░▀░░░░░▀▄▄░░█░█
+█░▄░█▀░▄░░░░░░░▀▀░░█
+█░░▀▀▀▀░░░░░░░░░░░░█
+█░░░░░░░░░░░░░░░░░░█
+█░░░░░░░░░░░░░░░░░░█
+░█░░▄▄░░▄▄▄▄░░▄▄░░█░
+░█░▄▀█░▄▀░░█░▄▀█░▄▀░
+░░▀░░░▀░░░░░▀░░░▀░░░
+totally accurate representation of kashmir 1:1 scale 
+
+*/
 function create() {
-    Game.physics.startSystem(Phaser.Physics.ARCADE);
-    Game.physics.arcade.gravity.y = 100;
-    diuner = Game.add.sprite(0, 0, "diuner");
-
-    Game.physics.arcade.enable(diuner);
-
-    diuner.body.collideWorldBounds = true;
-    diuner.body.velocity.x = 20;
-    diuner.body.bounce.set(0.9);
-
-    //  Also enable diuner for drag
-    diuner.inputEnabled = true;
-    diuner.input.enableDrag();
-
-    diuner.events.onDragStart.add(startDrag, this);
-    diuner.events.onDragStop.add(stopDrag, this);
-
+    Game.add.sprite(400, 400, "diuner").anchor.setTo(0.5);
+    Game.add.sprite(400, 400, "diuner").anchor.setTo(1);
+    Game.add.sprite(400, 400, "diuner").anchor.setTo(0);
+    Game.add.sprite(400, 400, "diuner").anchor.setTo(0, 1);
+    Game.add.sprite(400, 400, "diuner").anchor.setTo(1, 0);
+    
+    
 }
 
-function startDrag() {
-
-    //  You can't have a sprite being moved by physics AND input, so we disable the physics while being dragged
-   diuner.body.moves = false;
-
-}
-
-function stopDrag() {
-
-    //  And re-enable it upon release
-    diuner.body.moves = true;
-
-}
 function update() {
 
 }
