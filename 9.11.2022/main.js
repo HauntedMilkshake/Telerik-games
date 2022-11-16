@@ -28,7 +28,9 @@ function create() {
     let dumbellBottomRight = Game.add.sprite(Game.width, Game.height, "dumbbell");
     dumbellBottomRight.scale.setTo(0.5);
     dumbellBottomRight.anchor.setTo(1,1);
-    //.anchoir.setTo() raboti po sledniq nachin: priema 2 parametura za x i y. Te ni pokazvat sprqmo koq tochka ot snimkata shte q risuvame
+
+
+    //.anchor.setTo() raboti po sledniq nachin: priema 2 parametura za x i y. Te ni pokazvat sprqmo koq tochka ot snimkata shte q risuvame
     // 0,0 risuvame q ot gorniq lqv ugul 
     // 1,0 premestili sme do kraq na snimkata po x horizontal, no ne na y i q risuvame ot gorniq desen ugul 
     // 0,1 premestili sme do kraq na snimkata po y vertikal, no ne na x i q risuvame ot dolniq lqv ugul 
