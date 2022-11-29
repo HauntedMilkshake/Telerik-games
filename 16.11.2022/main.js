@@ -7,13 +7,13 @@ function preload() {
     //game.load.image("moon", "white.jpg");
     game.load.spritesheet("alien", "alien.2096x786.8x3.png", 2096 / 8, 786 / 3 );
 }
-//let image
+  //let image
 let alien;
 function create() {
     //image = game.add.sprite(0, 0, 'moon');
     //image.scale.setTo(0.1)
     alien = game.add.sprite(0, 0, "alien");
-    alien.animations.add("walk", [], 60, true).play();
+    alien.animations.add("walk", [  ], 60, true).play();
     //alien.frame = 2;
     /*
     game.physics.startSystem(Phaser.Physics.ARCADE);
