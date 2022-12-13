@@ -1,0 +1,3 @@
+ternaren operator 
+condition ? true: false 
+po kratuk if prosto
