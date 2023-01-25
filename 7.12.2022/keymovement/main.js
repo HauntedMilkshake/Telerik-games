@@ -11,11 +11,11 @@ function create() {
     alien1 = Game.add.sprite(16, 20, "dude");
     alien2 = Game.add.sprite(16, 20, "dude");
     
-    alien1.anchor.setTo(0.5, 0.5);
+    alien1.anchor.setTo(0.5);
     alien1.animations.add("walkLeft", [5, 6, 7, 8], 20, true);
     alien1.animations.add("walkRight", [0, 1, 2, 3], 20, true);
 
-    alien2.anchor.setTo(0.5, 0.5);
+    alien2.anchor.setTo(0.5);
     alien2.animations.add("walkLeft", [5, 6, 7, 8], 20, true);
     alien2.animations.add("walkRight", [0, 1, 2, 3], 20, true);
 
