@@ -5,9 +5,10 @@ let playerState = true;
 let button_swap, button_a, button_d, button_w;
 // true - human form 
 // false - ghost form
+// druga promenliva za duha sprqmo playerState shte mestq ili duha ili playera 
 function preload() {
     //("ghostIdle", "assets\ghost\idle.png");
-    Game.load.spritesheet("human", "assets\player\spritesheet.png", 288  / 9, 32);
+    Game.load.spritesheet("human", "assets/player/spritesheet.png", 288  / 9, 32);
 }
 
 function create() {
@@ -19,8 +20,9 @@ function createPlayer() {
     player = Game.add.sprite(64, 200, "human");
 
     player.anchor.setTo(0.5);
+    player.scale.setTo(1);
 
-    player.animations.add("idle", [0 , 1], 15, true);
+    player.animations.add("idle", [0 , 1], 1, true);
     player.animations.add("run", [2, 3, 4, 5, 6, 7, 8], 15, true);
 
     Game.physics.enable(player, Phaser.Physics.ARCADE);
@@ -46,7 +48,7 @@ function movePlayer() {
             player.body.velocity.x = -50;
             player.animations.play("run");
         }else if(button_d.isDown){
-            player.body.velocity.x = 50;
+            player.body.velocity.x = +50;
             player.scale.setTo(-1, 1);
             player.animations.play("run");
         }
