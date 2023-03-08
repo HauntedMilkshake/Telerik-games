@@ -101,8 +101,12 @@ function movePlayer() {
 }
 
 function switchToGhost() {
-    console.log(button_swap.onPres);
-    if(button_swap.onPress){
+    console.log(button_swap.onPress);
+    let flag = true
+    //buleva promenliva samo dali e natisnat butona i dali e pusnat
+    //mojem da natisnem butona samo kogato isPress primerno e false i tq stava true shtom se natisne butona i vice versa
+    if(button_swap.isDown && flag){
+        flag = false
 
         console.log("1: " + playerState);
         playerState = !(playerState);

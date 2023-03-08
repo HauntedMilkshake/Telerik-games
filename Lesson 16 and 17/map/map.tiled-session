@@ -1,0 +1,50 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "#tiles": {
+            "scaleInDock": 1
+        },
+        "map.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "map.tmx": {
+            "scale": 0.7939285714285714,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 561.1336032388664,
+                "y": 81.24156545209178
+            }
+        },
+        "map.tmx#tiles": {
+            "scaleInDock": 1.5
+        }
+    },
+    "last.exportedFilePath": "C:/Spas/Telerik/Telerik-games/Lesson 16 and 17/map",
+    "last.imagePath": "C:/Spas/Telerik/Telerik-games/Lesson 16 and 17/map",
+    "map.height": 10,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 70,
+    "openFiles": [
+        "map.tmx"
+    ],
+    "project": "map.tiled-project",
+    "recentFiles": [
+        "map.tmx",
+        "map.json"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
