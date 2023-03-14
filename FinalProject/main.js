@@ -1,5 +1,8 @@
 'use strict'
-const Game = new Phaser.Game(400, 400, Phaser.AUTO, "", { preload, create, update });
+
+//const { Time } = require("phaser-ce");
+
+const Game = new Phaser.Game(800, 400, Phaser.AUTO, "", { preload, create, update });
 let player;
 let ghost; 
 let hideGhostX = -100;
@@ -54,14 +57,15 @@ function createKeys() {
 
 
 function update() {
-    movePlayer();
+    movement();
     switchToGhost();
 }
 
-function movePlayer() {
+function movement() {
     if(playerState){
-   
+        Game.camera.follow(player);
         if(button_a.isDown){
+            // probvai go s player.setVelocityX(-playerSpeed);
             player.body.velocity.x = -playerSpeed;
             player.animations.play("run");
             player.scale.setTo(-2, 2);  
@@ -80,7 +84,7 @@ function movePlayer() {
 
     }else if(!playerState){
        
-        
+        Game.camera.follow(ghost);
         if(button_a.isDown){
             ghost.body.velocity.x = -ghostSpeed;
 
@@ -99,24 +103,52 @@ function movePlayer() {
         }
     }
 }
-
+/*
 function switchToGhost() {
-    console.log(button_swap.onPress);
-    let flag = true
+    let isButtonPressed = false;
+    let isHumanMode = true;
     //buleva promenliva samo dali e natisnat butona i dali e pusnat
     //mojem da natisnem butona samo kogato isPress primerno e false i tq stava true shtom se natisne butona i vice versa
-    if(button_swap.isDown && flag){
-        flag = false
+    if(button_swap.isDown && isButtonPressed == false){
+        isButtonPressed = true;
+        isHumanMode = false;
 
         console.log("1: " + playerState);
         playerState = !(playerState);
-        ghost.x = player.x + 32;
-        ghost.y = player.y; 
-        console.log("2: " + playerState);
 
+        ghost.x = player.x + 32;
+        ghost.y = player.y;
+
+        console.log("2: " + playerState); 
+        if(button_swap.isDown && isHumanMode == false){
+            isButtonPressed = false;
+            isHumanMode = true;
+            playerState = !(playerState);
+
+        }
         if(playerState){
             ghost.x = hideGhostX;
             ghost.y = hideGhostY;
+        }
+    }
+}
+*/
+function switchToGhost(){
+    let flag = true;
+    //console.log(Game.time.now);
+    if(button_swap.isReleased){
+        flag = false;
+        console.log("1")
+        playerState = !(playerState);
+        ghost.x = player.x + 32;
+        ghost.y = player.y; 
+        if(playerState){
+            flag = true;
+            console.log("2")
+            playerState = !(playerState);
+            ghost.x = hideGhostX;
+            ghost.y = hideGhostY;
+
         }
     }
 }
