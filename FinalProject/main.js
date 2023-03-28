@@ -14,12 +14,13 @@ let playerState = true;
 let button_swap_toGhost, button_swap_toHuman, button_a, button_d, button_w, button_s;
 // true - human form 
 // false - ghost form
+let backgroundLayer;
 function preload() {
     
     Game.load.spritesheet("human", "assets/player/spritesheet.png", 288  / 9, 32);
     Game.load.image("ghost", "assets/ghost/idle.png");
-    Game.load.tilemap("l1", "l1/l1.json", null, Phaser.Tilemap.TILED_JSON);
-    Game.load.image("tileset", "l1/l1.png");
+    Game.load.tilemap("l1", "assets/l1/l1.json", null, Phaser.Tilemap.TILED_JSON);
+    Game.load.image("map", "assets/l1/l1.png");
 }
 
 function create() {
@@ -31,8 +32,10 @@ function create() {
 
 function createMap(){
     const map = Game.add.tilemap("l1");
-    map.addTilesetImage("map", "tileset");
+    backgroundLayer = map.createLayer("background");
+    map.addTilesetImage("map", "map");
     ground = map.createLayer("Tile Layer 1");
+
 }
 function createPlayer() {
     player = Game.add.sprite(16, 24, "human");
@@ -72,6 +75,7 @@ function update() {
     movement();
     switchToGhost();
     switchToHuman();
+    console.log(mouse.x, mouse.y)
 }
 
 function movement() {
